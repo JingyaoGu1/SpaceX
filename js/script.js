@@ -38,13 +38,16 @@ function countUp() {
 
       // Create an increment
       const increment = target / 100;
+      
+      const timeoutDelay = target > 100 ? 50 : 25; // Faster update for large numbers
+
 
       // If counter is less than target, add increment
       if (c < target) {
         // Round up and set counter value
         counter.innerText = `${Math.ceil(c + increment)}`;
 
-        setTimeout(updateCounter, 75);
+        setTimeout(updateCounter, timeoutDelay);
       } else {
         counter.innerText = target;
       }
